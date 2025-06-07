@@ -19,13 +19,23 @@ class Database {
             },
             {
                 id: 'socio-1',
-                email: 'socio@email.com',
+                email: 'socio1@email.com',
                 password: 'socio123',
                 type: 'socio',
                 name: 'Juan Pérez',
                 phone: '+569 9876 5432',
                 address: 'Calle Falsa 123',
                 createdAt: '2025-02-15'
+            },
+            {
+                id: 'socio-2',
+                email: 'socio2@email.com',
+                password: 'socio123',
+                type: 'socio',
+                name: 'Jovanka',
+                phone: '+569 6543 2101',
+                address: 'Calle Falsa 123',
+                createdAt: '2025-01-15'
             }
         ];
 
@@ -39,7 +49,7 @@ class Database {
                 time: '10:00',
                 location: 'Parque Central',
                 maxParticipants: 50,
-                participants: ['socio-1'],
+                participants: ['socio-1','socio-2'],
                 createdAt: '2025-05-01',
                 createdBy: 'admin-1'
             },
@@ -51,7 +61,7 @@ class Database {
                 time: '09:00',
                 location: 'Clínica Veterinaria Central',
                 maxParticipants: 30,
-                participants: [],
+                participants: ['socio-2'],
                 createdAt: '2025-06-01',
                 createdBy: 'admin-1'
             },
@@ -63,8 +73,20 @@ class Database {
                 time: '14:00',
                 location: 'Sede de la Fundación',
                 maxParticipants: 25,
-                participants: [],
+                participants: ['socio-1'],
                 createdAt: '2025-03-01',
+                createdBy: 'admin-1'
+            },
+            {
+                id: 'event-4',
+                title: 'Taller de Alimentación y Salud Dietética Animal',
+                description: 'Charla y taller práctico sobre nutrición adecuada, dietas especiales y salud digestiva para perros y gatos. Incluye consultas con veterinarios y entrega de folletos informativos.',
+                date: '2025-06-30',
+                time: '11:00',
+                location: 'Sede de la Fundación',
+                maxParticipants: 30,
+                participants: ['socio-1','socio-2'],
+                createdAt: '2025-06-07',
                 createdBy: 'admin-1'
             }
         ];
@@ -82,7 +104,20 @@ class Database {
                 vaccinated: true,
                 sterilized: true,
                 notes: 'Muy cariñoso y juguetón',
-                createdAt: '2024-02-20'
+                createdAt: '2025-02-20'
+            },
+            {
+                id: 'pet-2',
+                ownerId: 'socio-1',
+                name: 'Cholo',
+                type: 'Perro',
+                breed: 'Mestizo',
+                age: 5,
+                color: 'Negro',
+                vaccinated: true,
+                sterilized: false,
+                notes: 'Muy alegre y fiel',
+                createdAt: '2025-02-20'
             }
         ];
 

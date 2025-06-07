@@ -54,5 +54,5 @@ pet_lovers/
 ## Notas
 - Este proyecto es solo una maqueta y no incluye funcionalidades de backend ni seguridad avanzada.
 - Las imágenes y datos se almacenan únicamente en el navegador del usuario.
-
+- localStorage.clear(); para limpiar la persistencia de datos una vez creados registros, ya que se mantienen en el explorador independiente de haber cerado la pestaña/ventana.
 
