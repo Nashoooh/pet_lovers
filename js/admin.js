@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     const contentSections = document.querySelectorAll('.content-section');
     const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebarClose = document.querySelector('.sidebar-close');
     const sidebar = document.querySelector('.sidebar');
     const eventModal = document.getElementById('eventModal');
     const participantsModal = document.getElementById('participantsModal');
@@ -26,18 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', handleNavigation);
     });
 
-    function toggleSidebar() {
-        sidebar.classList.toggle('open');
-    }
-
     if (sidebarToggle) {
         sidebarToggle.addEventListener('click', toggleSidebar);
-        // Opcional: cerrar el menú al hacer clic fuera
-        document.addEventListener('click', function(e) {
-            if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
-                sidebar.classList.remove('open');
-            }
-        });
+    }
+
+    if (sidebarClose) {
+        sidebarClose.addEventListener('click', closeSidebar);
     }
 
     if (eventForm) {
@@ -53,6 +48,20 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target.classList.contains('modal')) {
             closeEventModal();
             closeParticipantsModal();
+        }
+    });
+
+    // Cerrar sidebar en móvil al hacer click fuera
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            const sidebar = document.querySelector('.sidebar');
+            const sidebarToggle = document.querySelector('.sidebar-toggle');
+
+            if (sidebar && sidebar.classList.contains('open') &&
+                !sidebar.contains(e.target) &&
+                !sidebarToggle.contains(e.target)) {
+                closeSidebar();
+            }
         }
     });
 
@@ -100,11 +109,21 @@ document.addEventListener('DOMContentLoaded', function() {
             'pets': 'Mascotas Registradas'
         };
         pageTitle.textContent = titles[targetSection] || 'Dashboard';
+
+        // Cerrar sidebar en móvil después de navegación
+        if (window.innerWidth <= 768) {
+            closeSidebar();
+        }
     }
 
     // Función para toggle del sidebar en móvil
     function toggleSidebar() {
         sidebar.classList.toggle('open');
+    }
+
+    // Función para cerrar el sidebar
+    function closeSidebar() {
+        sidebar.classList.remove('open');
     }
 
     // Función para cargar estadísticas
