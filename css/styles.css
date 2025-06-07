@@ -424,9 +424,15 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
+    overflow: hidden;
 }
 
-.pet-image i {
+.pet-image i,
+.pet-image img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 50%;
     font-size: 2rem;
     color: var(--white);
 }

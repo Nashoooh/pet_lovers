@@ -15,7 +15,7 @@ class Database {
                 type: 'admin',
                 name: 'Ignacio Andana',
                 phone: '+569 7946 1780',
-                createdAt: '2024-01-01'
+                createdAt: '2020-01-01'
             },
             {
                 id: 'socio-1',
@@ -25,7 +25,7 @@ class Database {
                 name: 'Juan Pérez',
                 phone: '+569 9876 5432',
                 address: 'Calle Falsa 123',
-                createdAt: '2024-02-15'
+                createdAt: '2025-02-15'
             }
         ];
 
@@ -256,9 +256,9 @@ class Database {
     }
 
     // Método para autenticación
-    authenticate(email, password, userType) {
+    authenticate(email, password) {
         const user = this.getUserByEmail(email);
-        if (user && user.password === password && user.type === userType) {
+        if (user && user.password === password) {
             this.setCurrentUser(user.id);
             return user;
         }

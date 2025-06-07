@@ -44,10 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(e.target);
         const email = formData.get('email');
         const password = formData.get('password');
-        const userType = formData.get('userType');
 
         // Validar campos
-        if (!email || !password || !userType) {
+        if (!email || !password) {
             showError('Por favor completa todos los campos');
             return;
         }
@@ -153,13 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'socio.html';
             }
         }
-    
-        // // Si estamos en registro y ya hay un usuario logueado, mostrar alerta
-        // if (currentUser && window.location.pathname.includes('registro.html')) {
-        //     alert('Sugerimos cerrar sesión para crear un nuevo usuario.');
-        //     return;
-        // }
-    
+        
         // Si estamos en admin o socio y no hay usuario logueado, redirigir al login
         if (!currentUser && (window.location.pathname.includes('admin.html') || window.location.pathname.includes('socio.html'))) {
             window.location.href = 'login.html';
