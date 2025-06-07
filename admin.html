@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - Fundación Patitas Felices</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <i class="fas fa-paw"></i>
+                <span>Patitas Felices</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item active">
+                    <a href="#dashboard" class="nav-link" data-section="dashboard">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#events" class="nav-link" data-section="events">
+                        <i class="fas fa-calendar"></i>
+                        <span>Eventos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#socios" class="nav-link" data-section="socios">
+                        <i class="fas fa-users"></i>
+                        <span>Socios</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#pets" class="nav-link" data-section="pets">
+                        <i class="fas fa-heart"></i>
+                        <span>Mascotas</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <i class="fas fa-user-shield"></i>
+                <div>
+                    <span class="user-name" id="adminName">Administrador</span>
+                    <span class="user-role">Admin</span>
+                </div>
+            </div>
+            <button onclick="logout()" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="content-header">
+            <div class="header-left">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <a href="index.html" class="btn btn-outline">
+                    <i class="fas fa-home"></i>
+                    Ver Sitio Web
+                </a>
+            </div>
+        </header>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalSocios">0</h3>
+                        <p>Socios Activos</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalEvents">0</h3>
+                        <p>Eventos Totales</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalPets">0</h3>
+                        <p>Mascotas Registradas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalParticipants">0</h3>
+                        <p>Participaciones</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="dashboard-section">
+                    <h2>Eventos Recientes</h2>
+                    <div class="recent-events" id="recentEvents">
+                        <!-- Los eventos se cargarán dinámicamente -->
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h2>Socios Nuevos</h2>
+                    <div class="recent-socios" id="recentSocios">
+                        <!-- Los socios se cargarán dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="content-section">
+            <div class="section-header">
+                <h2>Gestión de Eventos</h2>
+                <button class="btn btn-primary" onclick="openEventModal()">
+                    <i class="fas fa-plus"></i>
+                    Nuevo Evento
+                </button>
+            </div>
+
+            <div class="events-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Evento</th>
+                            <th>Fecha</th>
+                            <th>Ubicación</th>
+                            <th>Participantes</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eventsTableBody">
+                        <!-- Los eventos se cargarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Socios Section -->
+        <section id="socios" class="content-section">
+            <div class="section-header">
+                <h2>Gestión de Socios</h2>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar socio..." id="socioSearch">
+                </div>
+            </div>
+
+            <div class="socios-grid" id="sociosGrid">
+                <!-- Los socios se cargarán dinámicamente -->
+            </div>
+        </section>
+
+        <!-- Pets Section -->
+        <section id="pets" class="content-section">
+            <div class="section-header">
+                <h2>Mascotas Registradas</h2>
+            </div>
+
+            <div class="pets-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mascota</th>
+                            <th>Propietario</th>
+                            <th>Tipo</th>
+                            <th>Raza</th>
+                            <th>Edad</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="petsTableBody">
+                        <!-- Las mascotas se cargarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para crear/editar evento -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="eventModalTitle">Nuevo Evento</h3>
+                <button class="modal-close" onclick="closeEventModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="eventForm" class="modal-form">
+                <input type="hidden" id="eventId" name="eventId">
+
+                <div class="form-group">
+                    <label for="eventTitle">Título del Evento</label>
+                    <input type="text" id="eventTitle" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDescription">Descripción</label>
+                    <textarea id="eventDescription" name="description" rows="3" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Fecha</label>
+                        <input type="date" id="eventDate" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Hora</label>
+                        <input type="time" id="eventTime" name="time" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventLocation">Ubicación</label>
+                    <input type="text" id="eventLocation" name="location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventMaxParticipants">Máximo de Participantes</label>
+                    <input type="number" id="eventMaxParticipants" name="maxParticipants" min="1" required>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeEventModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Evento</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para ver participantes -->
+    <div id="participantsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="participantsModalTitle">Participantes del Evento</h3>
+                <button class="modal-close" onclick="closeParticipantsModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="participants-list" id="participantsList">
+                <!-- Los participantes se cargarán dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
