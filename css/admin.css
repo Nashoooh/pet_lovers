@@ -72,7 +72,7 @@
 }
 
 .nav-item.active .nav-link {
-    background: rgba(248, 187, 217, 0.2);
+    background: rgba(184, 230, 255, 0.2);
     color: var(--white);
     border-left-color: var(--soft-pink);
 }

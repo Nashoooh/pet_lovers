@@ -1,20 +1,20 @@
 /* Variables de colores pasteles */
 :root {
-    --pastel-green: #D4F4DD;
+    --pastel-green: #D4F5DD;
     --pastel-blue: #C8E6FF;
     --pastel-cyan: #D0F6FF;
-    --pastel-mint: #B8E6C1;
+    --pastel-mint: #B8F5E6;
     --pastel-teal: #B2EBF2;
     --pastel-yellow: #FFF2CC;
     --pastel-peach: #FFE5D1;
-    --pastel-pink: #FFD3E1;
+    --pastel-pink: #D9F2FF;
     --pastel-purple: #E5D4FF;
 
     --soft-green: #B8E6C1;
     --soft-blue: #A8D5FF;
     --soft-cyan: #B2EBF2;
     --soft-mint: #C2F2E9;
-    --soft-pink: #F8BBD9;
+    --soft-pink: #B8E6FF;
     --soft-purple: #D1B3FF;
 
     --text-dark: #4A4A4A;
@@ -58,17 +58,19 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--soft-pink), var(--pastel-purple));
+    background:     linear-gradient(135deg, #77c2e9, #c9aff1);
+    /* background: linear-gradient(135deg, var(--soft-pink), var(--pastel-purple)); */
     color: var(--white);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(248, 187, 217, 0.4);
+    box-shadow: 0 8px 20px rgba(184, 230, 255, 0.4);
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, var(--soft-blue), var(--pastel-blue));
+    background: linear-gradient(135deg, #90cbeb, #bdabd8);
+    /* background: linear-gradient(135deg, var(--soft-blue), var(--pastel-blue)); */
     color: var(--white);
 }
 
@@ -78,7 +80,8 @@ body {
 }
 
 .btn-login {
-    background: var(--pastel-green);
+    background: #95d6a6;
+    /* background: var(--pastel-green); */
     color: var(--text-dark);
     padding: 8px 16px;
     border-radius: 20px;
@@ -94,7 +97,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-purple));
+    background: linear-gradient(135deg, #77c2e9, #c9aff1);
     position: fixed;
     top: 0;
     width: 100%;
@@ -200,7 +203,7 @@ body {
 
 .hero-image i {
     font-size: 15rem;
-    color: var(--soft-pink);
+    color: var(--soft-purple);
     opacity: 0.3;
 }
 
@@ -798,7 +801,8 @@ body {
 
 /* Efectos de scroll para header */
 .header.scrolled {
-    background: rgba(255, 211, 225, 0.95);
+    background: rgb(175 228 255 / 95%);
+    /* background: rgba(217, 242, 255, 0.95); */
     backdrop-filter: blur(10px);
 }
 
@@ -826,7 +830,8 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-purple));
+        background: linear-gradient(135deg, #9cd0eb, #b3a3cd);
+        /* background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-purple)); */
         flex-direction: column;
         padding: 2rem;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);

@@ -26,8 +26,18 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', handleNavigation);
     });
 
+    function toggleSidebar() {
+        sidebar.classList.toggle('open');
+    }
+
     if (sidebarToggle) {
         sidebarToggle.addEventListener('click', toggleSidebar);
+        // Opcional: cerrar el menú al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
     }
 
     if (eventForm) {

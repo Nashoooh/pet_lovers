@@ -9,7 +9,8 @@
 
 /* Header */
 .socio-header {
-    background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-purple));
+    background: linear-gradient(135deg, #77c2e9, #c9aff1);
+    /* background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-purple)); */
     padding: 1rem 0;
     box-shadow: 0 2px 20px rgba(0,0,0,0.1);
     position: sticky;
