@@ -11,7 +11,7 @@ class Database {
             {
                 id: 'admin-1',
                 email: 'admin@patitasfelices.org',
-                password: 'admin123',
+                password: 'Admin.123',
                 type: 'admin',
                 name: 'Ignacio Andana',
                 phone: '+569 7946 1780',
@@ -20,7 +20,7 @@ class Database {
             {
                 id: 'socio-1',
                 email: 'socio1@email.com',
-                password: 'socio123',
+                password: 'Socio.123',
                 type: 'socio',
                 name: 'Juan Pérez',
                 phone: '+569 9876 5432',
@@ -30,7 +30,7 @@ class Database {
             {
                 id: 'socio-2',
                 email: 'socio2@email.com',
-                password: 'socio123',
+                password: 'Socio.123',
                 type: 'socio',
                 name: 'Jovanka',
                 phone: '+569 6543 2101',

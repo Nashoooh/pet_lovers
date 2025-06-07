@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
         userTypeSelect.addEventListener('change', function() {
             if (this.value === 'admin') {
                 emailInput.value = 'admin@patitasfelices.org';
-                passwordInput.value = 'admin123';
+                passwordInput.value = 'Admin.123';
             } else if (this.value === 'socio') {
-                emailInput.value = 'socio@email.com';
-                passwordInput.value = 'socio123';
+                emailInput.value = 'socio1@email.com';
+                passwordInput.value = 'Socio.123';
             } else {
                 emailInput.value = '';
                 passwordInput.value = '';

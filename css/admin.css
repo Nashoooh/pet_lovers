@@ -926,3 +926,76 @@
         font-size: 0.9rem;
     }
 }
+
+/* Mejorar inputs y textarea en el modal de eventos */
+.modal-form input[type="text"],
+.modal-form input[type="date"],
+.modal-form input[type="time"],
+.modal-form input[type="number"],
+.modal-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: #222;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+.modal-form input[type="text"]:focus,
+.modal-form input[type="date"]:focus,
+.modal-form input[type="time"]:focus,
+.modal-form input[type="number"]:focus,
+.modal-form textarea:focus {
+  border-color: #7e57c2;
+  box-shadow: 0 0 0 2px #ede7f6;
+  background: #fff;
+}
+.modal-form label {
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 2px;
+  display: block;
+}
+.modal-form textarea {
+  min-height: 60px;
+  max-height: 160px;
+  resize: vertical;
+}
+
+/* Botones del modal */
+.modal-actions .btn-primary {
+  background: linear-gradient(90deg, #7e57c2 0%, #64b5f6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.modal-actions .btn-primary:hover {
+  background: linear-gradient(90deg, #5e35b1 0%, #2196f3 100%);
+}
+.modal-actions .btn-secondary {
+  background: #f3f3f3;
+  color: #7e57c2;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.modal-actions .btn-secondary:hover {
+  background: #ede7f6;
+}
