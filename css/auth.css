@@ -443,3 +443,100 @@
 .benefit-item span {
     color: var(--text-dark);
 }
+
+/* Estilos adicionales para registro */
+.field-hint {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.terms-link {
+    color: var(--soft-purple);
+    text-decoration: none;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+} → /* Estilos adicionales para registro */
+.field-hint {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.terms-link {
+    color: var(--soft-purple);
+    text-decoration: none;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+/* Password requirements */
+.password-requirements {
+    margin-top: 0.75rem;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: 10px;
+    border: 2px solid var(--pastel-blue);
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.requirement:last-child {
+    margin-bottom: 0;
+}
+
+.requirement i {
+    font-size: 0.8rem;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.requirement.valid i {
+    color: #51cf66;
+    background: rgba(81, 207, 102, 0.1);
+}
+
+.requirement.invalid i {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.requirement.valid span {
+    color: #51cf66;
+    text-decoration: line-through;
+}
+
+.requirement.invalid span {
+    color: var(--text-light);
+}
+
+/* Button disabled state */
+.btn-primary:disabled {
+    background: var(--light-gray);
+    color: var(--text-light);
+    cursor: not-allowed;
+    border: 2px solid #e0e0e0;
+}
+
+.btn-primary:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}

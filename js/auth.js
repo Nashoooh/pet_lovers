@@ -77,6 +77,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
 
+    // Función para manejar validación de password
+    function validatePassword(password) {
+        const minLength = 8;
+        const hasUpper = /[A-Z]/.test(password);
+        const hasLower = /[a-z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const hasSymbol = /[^A-Za-z0-9]/.test(password);
+        return password.length >= minLength && hasUpper && hasLower && hasNumber && hasSymbol;
+    }
+    
+    // // Uso en la validación:
+    // if (!validatePassword(userData.password)) {
+    //     showError('La contraseña debe tener al menos 8 caracteres, incluir mayúscula, minúscula, número y símbolo');
+    //     return;
+    // }
+
     // Función para manejar registro
     function handleRegister(e) {
         e.preventDefault();
@@ -104,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        if (userData.password.length < 6) {
-            showError('La contraseña debe tener al menos 6 caracteres');
+        if (!validatePassword(userData.password)) {
+            showError('La contraseña debe tener al menos 8 caracteres, incluir mayúscula, minúscula, número y símbolo');
             return;
         }
 
@@ -283,4 +299,5 @@ document.addEventListener('DOMContentLoaded', function() {
     if (firstInput) {
         firstInput.focus();
     }
+
 });

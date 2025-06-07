@@ -255,6 +255,19 @@ class Database {
         localStorage.setItem('pf_currentUser', '');
     }
 
+    // Método para actualizar contraseña
+    updateUserPassword(email, newPassword) {
+        const users = this.getUsers();
+        const userIndex = users.findIndex(user => user.email === email);
+
+        if (userIndex !== -1) {
+            users[userIndex].password = newPassword;
+            this.saveUsers(users);
+            return true;
+        }
+        return false;
+    }
+
     // Método para autenticación
     authenticate(email, password) {
         const user = this.getUserByEmail(email);
